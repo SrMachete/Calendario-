@@ -1,13 +1,15 @@
+
 const calendar = document.getElementById("calendar");
 const monthYear = document.getElementById("monthYear");
 const popup = document.getElementById("popup");
 const popupContent = document.getElementById("popupContent");
 
 let currentDate = new Date();
+
 const asociados = [
-  { login: "bricafon", turno: "DB", procesos: ["Pick","Pit","Pack","Rebin","Dock"], color: "#FFADAD" },
-  { login: "islrica", turno: "D5", procesos: ["Pick","Dock"], color: "#FFD6A5" },
-  { login: "anorvpma", turno: "DX", procesos: ["Pick","Dock"], color: "#FDFFB6" },
+  { login: "bricafon", turno: "DB", procesos: ["Pick", "Pit", "Pack", "Rebin", "Dock"], color: "#FFADAD" },
+  { login: "islrica", turno: "D5", procesos: ["Pick", "Dock"], color: "#FFD6A5" },
+  { login: "anorvpma", turno: "DX", procesos: ["Pick", "Dock"], color: "#FDFFB6" },
 ];
 
 function renderCalendar(date) {
@@ -33,11 +35,11 @@ function renderCalendar(date) {
 }
 
 function showAssignPopup(day, month, year) {
-  const selectedDate = `${year}-${month+1}-${day}`;
+  const selectedDate = `${year}-${month + 1}-${day}`;
   let html = `<h3>${selectedDate}</h3>`;
-  html += "<p>Selecciona un asociado para asignar vacaciones o DP:</p><ul>";
+  html += "<p>Selecciona un asociado para asignar:</p><ul>";
   for (const a of asociados) {
-    html += `<li style="color:${a.color}">${a.login} (${a.turno}) - ${a.procesos.join(", ")}</li>`;
+    html += `<li style="color:${a.color}; margin-bottom: 4px;"><strong>${a.login}</strong> (${a.turno})<br/><small>${a.procesos.join(", ")}</small></li>`;
   }
   html += "</ul>";
   popupContent.innerHTML = html;
