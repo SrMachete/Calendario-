@@ -1,3 +1,4 @@
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen;
   background-color: #f2f2f7;
@@ -32,30 +33,36 @@ h1 {
   min-height: 60px;
   cursor: pointer;
   border-radius: 6px;
+  text-align: center;
 }
 .day:hover {
   background: #e6e6ea;
-}
-.asignado {
-  font-size: 0.75rem;
-  border-radius: 3px;
-  margin-top: 4px;
-  padding: 2px 4px;
-  display: inline-block;
 }
 #popup {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
-#popupContent {
-  background: white;
+.popup-box {
+  background: #fff;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.closeBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007AFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .hidden {
   display: none;
